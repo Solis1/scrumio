@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  main
+    h1 content
+block header
+  header.navbar.sticky-top.margin-sidemenu.d-flex
+    form.form-inline.mr-auto
+      <input class="form-control mr-sm-2" type="search" placeholder="&#xf002; Busca lo que quieras..." aria-label="Search"></input>
+    div.mr-4
+      button.btn.btn-createProy.mr-3 Nuevo Proyecto
+      img(src="images/leader.png").img-profile
+    div.d-inline-block.mr-4
+      p #{userName}
+      p Perfil
+block sidemenu
+  
+  div.sidenav
+    img(src="images/logo.png")
+    div.menu.mt-5
+      div
+        a(href='#about') Home
+        a(href='#services') Proyectos
+        a(href='#clients') Archivero
+        a(href='#contact') Equipos
+        a(href='#contact') Miembros
+      div.fixed-bottom.ml-5.mb-3
+        a(href="/logout").logout
+          img(src="images/logout.png").img-profile

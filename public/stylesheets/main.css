@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Tauri");
+header {
+  font-size: 36px;
+  background-color: #f5a623;
+  font-family: 'Tauri', sans-serif;
+  color: white;
+  justify-content: flex-start !important; }
+  header .btn-createProy {
+    border-radius: 7px;
+    background-color: #f57f17;
+    width: 156px;
+    height: 28px;
+    color: #ffffff;
+    padding: 0px; }
+  header .img-profile {
+    width: 100px;
+    height: 100px; }
+  header p {
+    font-size: 18px; }
+  header .form-control {
+    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    border-radius: 25px;
+    border: solid 1px #ffffff;
+    background-color: transparent !important;
+    color: #ffffff;
+    opacity: 0.6;
+    font-size: 12px;
+    width: 462px !important; }
+    header .form-control::placeholder {
+      color: #ffffff; }
+
+body {
+  background-color: #ededed !important; }
+
+footer {
+  background-color: #515151;
+  border: solid 1px #515151; }
+
+#message-log {
+  font-size: 14px !important;
+  text-align: center; }
+  #message-log a {
+    color: #f5a623; }
+
+main {
+  margin-left: 160px;
+  /* Same as the width of the sidenav */
+  font-size: 28px;
+  /* Increased text to enable scrolling */
+  padding: 0px 10px; }
+
+.margin-sidemenu {
+  margin-left: 150px;
+  padding: 0px 1rem !important; }
+
+.sidenav {
+  height: 100%;
+  width: 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 13px 4px 0 rgba(0, 0, 0, 0.2);
+  text-align: center; }
+  .sidenav .menu {
+    text-align: left; }
+    .sidenav .menu a {
+      text-decoration: none;
+      color: #818181;
+      display: block;
+      font-size: 16px;
+      color: #4a4a4a;
+      font-family: 'Open Sans', sans-serif;
+      padding: 10px 10px; }
+      .sidenav .menu a:hover {
+        opacity: 0.6;
+        background-color: #ededed; }
+    .sidenav .menu .logout {
+      padding: 0px; }
+
+#logUser {
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: solid 1px #d6d4d4;
+  padding: 40px 20px 0px 20px;
+  width: 80%; }
+  #logUser .form-group {
+    padding-top: 20px; }
+    #logUser .form-group .form-control {
+      font-size: 18px;
+      opacity: 0.8 !important;
+      border-radius: 5px !important;
+      background-color: #ededed !important;
+      padding-left: 20px;
+      font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: inherit; }
+  #logUser nav {
+    border-bottom: none; }
+    #logUser nav a {
+      color: black;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      border: none; }
+    #logUser nav a.active {
+      border-bottom: 5px solid #f5a623; }
+  #logUser .btnSign {
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #f57f17;
+    width: 218px;
+    height: 35px; }
+
+#signUp {
+  text-align: center; }
+
+#signIn {
+  padding-top: 20px;
+  text-align: center; }
+  #signIn .social-btns {
+    margin: 10px 0px; }
+    #signIn .social-btns a {
+      margin: 0px 15px; }
+    #signIn .social-btns .btn-facebook, #signIn .social-btns .btn-google {
+      color: white !important; }
+    #signIn .social-btns .btn-instagram {
+      color: darkmagenta !important; }
+  #signIn .divider {
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding-top: 3px; }
+    #signIn .divider span {
+      font-size: 20px;
+      background-color: white;
+      padding: 0 5px; }

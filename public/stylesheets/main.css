@@ -153,9 +153,20 @@ main {
   padding-right: 5px;
   padding-left: 5px; }
 
+#proyectos .data img {
+  max-width: 200px; }
+
 #proyectos .data-proyect {
   background-color: white;
   border-radius: 10px; }
+  #proyectos .data-proyect .row div {
+    text-align: left; }
+  #proyectos .data-proyect .row b {
+    font-size: 13px; }
+  #proyectos .data-proyect .row p {
+    font-size: 13px;
+    color: #4a4a4a;
+    margin-bottom: 0px; }
 
 #signIn {
   padding-top: 20px;

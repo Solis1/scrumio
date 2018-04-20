@@ -183,9 +183,27 @@ main{
       padding-left: 5px
     }
   }
+  .data{
+    img{
+      max-width: 200px;
+    }
+  }
   .data-proyect{
     background-color: white;
     border-radius: 10px;
+    .row{
+      div{
+        text-align: left;
+      }
+      b{
+        font-size: 13px;
+      }
+      p{
+        font-size: 13px;
+        color: #4a4a4a;
+        margin-bottom: 0px;
+      }
+    }
   }
 }
 #signIn{

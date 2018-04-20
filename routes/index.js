@@ -3,7 +3,7 @@ module.exports = function(app, passport) {
     // =====================================
     // HOME PAGE (with login links) ========
     // =====================================
-    app.get('/', function(req, res) {
+    app.get('/', isLog, function(req, res) {
         res.render('index', {
           title: "Home",
           message: req.flash('signupMessage') + req.flash("loginMessage")
@@ -61,4 +61,15 @@ function isLoggedIn(req, res, next) {
       title: "Home",
       message: "Necesita logearse primero."
     });
+}
+
+var isLog = (req, res, next) => {
+
+  if(req.isAuthenticated()){
+    res.redirect('dashboard');
+  }else {
+    return next();
+  }
+
+
 }

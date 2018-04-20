@@ -1,8 +1,41 @@
 extends layout
 
 block content
-  main
-    h1 content
+  main.tab-content.container
+    div#home.tab-pane.fade.show.active
+      img(src="images/empty_state_proyect.png").img-fluid
+      p Parece que está algo vacio por aqui, por qué no empezamos creando un <a href="#proyectos">proyecto</a>.
+    div#proyectos.tab-pane.fade
+      div.titles.row
+        div.col-md-4
+          i.fa.fa-long-arrow-left
+          span Ver Lista
+        div.col-md-4.mt-3
+          h4 Titulo del Proyecto
+        div.col-md-4
+          button.btn Terminar Proyecto
+      div.row
+        div.col-md-4.mt-2
+          img.img-thumbnail(src="images/osito.png")
+        div.col-md-8.data-proyect
+          h4 DATOS DEL PROYECTO
+          h5 Nombre
+          h5 Fecha de Solicitud
+          h5 Fecha de Arranque
+          h5 Product Owner
+          h5 Descripcion
+      div.row
+        div.col-md-4
+          h3 Product Backlog
+        div.col-md-4
+          h3 Release Backlog
+        div.col-md-4
+    div#archivero.tab-pane.fade
+      h1 archivero
+    div#equipos.tab-pane.fade
+      h1 equipos
+    div#miembros.tab-pane.fade
+      h1 miembros
 block header
   header.navbar.sticky-top.margin-sidemenu.d-flex
     form.form-inline.mr-auto
@@ -14,16 +47,16 @@ block header
       p #{userName}
       p Perfil
 block sidemenu
-  
   div.sidenav
     img(src="images/logo.png")
     div.menu.mt-5
-      div
-        a(href='#about') Home
-        a(href='#services') Proyectos
-        a(href='#clients') Archivero
-        a(href='#contact') Equipos
-        a(href='#contact') Miembros
+      div.nav.nav-tabs(role='tablist')
+        a.nav-item.nav-link.active(data-toggle='tab', role='tab', aria-selected='true', href='#home') Home
+        a.nav-item.nav-link(data-toggle='tab', role='tab', aria-selected='true', href='#proyectos') Proyectos
+        a.nav-item.nav-link(data-toggle='tab', role='tab', aria-selected='true', href='#archivero') Archivero
+        a.nav-item.nav-link(data-toggle='tab', role='tab', aria-selected='true', href='#equipos') Equipos
+        a.nav-item.nav-link(data-toggle='tab', role='tab', aria-selected='true', href='#miembros') Miembros
       div.fixed-bottom.ml-5.mb-3
         a(href="/logout").logout
           img(src="images/logout.png").img-profile
+    

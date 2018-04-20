@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Tauri');
+
+$color-btn: #f57f17;
+$font-input: FontAwesome, "Open Sans", Verdana, sans-serif;
+
 header{
   font-size: 36px;
   background-color: #f5a623;
@@ -7,7 +11,7 @@ header{
   justify-content: flex-start !important;
   .btn-createProy{
     border-radius: 7px;
-    background-color: #f57f17;
+    background-color: $color-btn;
     width: 156px;
     height: 28px;
     color: #ffffff;
@@ -21,7 +25,7 @@ header{
     font-size: 18px;
   }
   .form-control{
-    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    font-family: $font-input;
     font-style: normal;
     font-weight: normal;
     border-radius: 25px;
@@ -55,6 +59,13 @@ main{
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
+  text-align: center;
+  #home{
+    a{
+      // text-decoration: none;
+      color: $color-btn;
+    }
+  }
 }
 .margin-sidemenu{
   margin-left: 150px;
@@ -73,6 +84,9 @@ main{
   text-align: center;
   .menu{
     text-align: left;
+    div{
+      border: none;
+    }
     a{
       text-decoration: none;
       color: #818181;
@@ -81,13 +95,20 @@ main{
       color: #4a4a4a;
       font-family: 'Open Sans', sans-serif;
       padding: 10px 10px;
+      border: none;
+      width: 100%;
       &:hover{
         opacity: 0.6;
         background-color: #ededed;
       }
+      &.active{
+        border-left: 5px solid #f5a623;
+      }
+
     }
     .logout{
       padding: 0px;
+      width: 0;
     }
   }
 }
@@ -106,7 +127,7 @@ main{
       border-radius: 5px !important;
       background-color: #ededed !important;
       padding-left:20px;
-	    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+	    font-family: $font-input;
       font-style: normal;
       font-weight: normal;
       text-decoration: inherit;
@@ -128,13 +149,44 @@ main{
   .btnSign{
     margin-top: 20px;
     border-radius: 10px;
-    background-color: #f57f17;
+    background-color: $color-btn;
     width: 218px;
     height: 35px;
   }
 }
 #signUp{
   text-align: center;
+}
+#proyectos{
+  .titles{
+    i{
+      color: $color-btn
+    }
+    span{
+      font-size: 14px;
+      font-weight: bold;
+      color: #4a4a4a;
+      padding-left: 5px;
+    }
+    h4{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    button{
+      border-radius: 7px;
+      background-color: #ffffff;
+      border: solid 3px #f57f17;
+      color: $color-btn;
+      height: 28px;
+      padding: 0px;
+      padding-right: 5px;
+      padding-left: 5px
+    }
+  }
+  .data-proyect{
+    background-color: white;
+    border-radius: 10px;
+  }
 }
 #signIn{
   padding-top: 20px;

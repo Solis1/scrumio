@@ -49,7 +49,10 @@ main {
   /* Same as the width of the sidenav */
   font-size: 28px;
   /* Increased text to enable scrolling */
-  padding: 0px 10px; }
+  padding: 0px 10px;
+  text-align: center; }
+  main #home a {
+    color: #f57f17; }
 
 .margin-sidemenu {
   margin-left: 150px;
@@ -68,6 +71,8 @@ main {
   text-align: center; }
   .sidenav .menu {
     text-align: left; }
+    .sidenav .menu div {
+      border: none; }
     .sidenav .menu a {
       text-decoration: none;
       color: #818181;
@@ -75,12 +80,17 @@ main {
       font-size: 16px;
       color: #4a4a4a;
       font-family: 'Open Sans', sans-serif;
-      padding: 10px 10px; }
+      padding: 10px 10px;
+      border: none;
+      width: 100%; }
       .sidenav .menu a:hover {
         opacity: 0.6;
         background-color: #ededed; }
+      .sidenav .menu a.active {
+        border-left: 5px solid #f5a623; }
     .sidenav .menu .logout {
-      padding: 0px; }
+      padding: 0px;
+      width: 0; }
 
 #logUser {
   border-radius: 10px;
@@ -119,6 +129,33 @@ main {
 
 #signUp {
   text-align: center; }
+
+#proyectos .titles i {
+  color: #f57f17; }
+
+#proyectos .titles span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4a4a4a;
+  padding-left: 5px; }
+
+#proyectos .titles h4 {
+  font-size: 20px;
+  font-weight: bold; }
+
+#proyectos .titles button {
+  border-radius: 7px;
+  background-color: #ffffff;
+  border: solid 3px #f57f17;
+  color: #f57f17;
+  height: 28px;
+  padding: 0px;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+#proyectos .data-proyect {
+  background-color: white;
+  border-radius: 10px; }
 
 #signIn {
   padding-top: 20px;

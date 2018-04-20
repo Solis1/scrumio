@@ -1,43 +1,44 @@
 extends layout
 
 block content
-  if message.length > 0
+  div.container
+    if message.length > 0
+      div.row
+        div#note.alert.alert-danger.col #{message}
     div.row
-      div#note.alert.alert-danger.col #{message}
-  div.row
-    div.col-md-6.pt-5
-      img(src="images/ilustracion.png").img-fluid
-    div.col-md-6.d-flex.align-items-center.flex-column
-      div#logUser.mt-5
-        nav#nav-tab.nav.nav-tabs(role='tablist')
-          a#nav-home-tab.nav-item.nav-link.active(data-toggle='tab', href='#signIn', role='tab', aria-controls='signIn', aria-selected='true') Sing In
-          a#nav-profile-tab.nav-item.nav-link(data-toggle='tab', href='#signUp', role='tab', aria-controls='signUp', aria-selected='false') Sign Up  
-        div.tab-content.d-flex.justify-content-center
-          form(method='POST' action='/login')#signIn.row.tab-pane.fade.show.active
-            div.form-group
-              <input name="email" class="form-control" type='email' aria-describedby='emailHelp' placeholder="&#xf0e0;   Correo Electronico"></input>
-            div.form-group
-              <input name="password" class="form-control" type='password' placeholder="&#xf023;     Contraseña"></input>
-            button.btn.btn-primary.btnSign INICIAR SESION
-            div.divider
-              span ó
-            div.social-btns
-              a.btn.btn-social-icon.btn-facebook.m-3
-                span.fa.fa-facebook
-              a.btn.btn-social-icon.btn-instagram
-                span.fa.fa-instagram
-              a.btn.btn-social-icon.btn-google  
-                span.fa.fa-google 
-          form(method='POST' action='/signup')#signUp.tab-pane.fade
-            div.form-group
-              <input name="name" class="form-control" type='text' aria-describedby='emailHelp' placeholder="&#xf007;   Nombre"></input>
-            div.form-group
-              <input name="email" class="form-control" type='email' aria-describedby='emailHelp' placeholder="&#xf0e0;   Correo Electronico"></input>
-            div.form-group
-              <input name="password" class="form-control" type='password' placeholder="&#xf023;     Contraseña"></input>
-            button.btn.btn-primary.btnSign.mb-2 REGISTRATE
-      div.d-flex.justify-content-center.mt-2.pb-4#message-log
-        p Al registrarte, aceptas nuestros <a href=# >términos y condiciones</a> y <a href=# >politicas de privacidad</a>
+      div.col-md-6.pt-5
+        img(src="images/ilustracion.png").img-fluid
+      div.col-md-6.d-flex.align-items-center.flex-column
+        div#logUser.mt-5
+          nav#nav-tab.nav.nav-tabs(role='tablist')
+            a#nav-home-tab.nav-item.nav-link.active(data-toggle='tab', href='#signIn', role='tab', aria-controls='signIn', aria-selected='true') Sing In
+            a#nav-profile-tab.nav-item.nav-link(data-toggle='tab', href='#signUp', role='tab', aria-controls='signUp', aria-selected='false') Sign Up  
+          div.tab-content.d-flex.justify-content-center
+            form(method='POST' action='/login')#signIn.row.tab-pane.fade.show.active
+              div.form-group
+                <input name="email" class="form-control" type='email' aria-describedby='emailHelp' placeholder="&#xf0e0;   Correo Electronico"></input>
+              div.form-group
+                <input name="password" class="form-control" type='password' placeholder="&#xf023;     Contraseña"></input>
+              button.btn.btn-primary.btnSign INICIAR SESION
+              div.divider
+                span ó
+              div.social-btns
+                a.btn.btn-social-icon.btn-facebook.m-3
+                  span.fa.fa-facebook
+                a.btn.btn-social-icon.btn-instagram
+                  span.fa.fa-instagram
+                a.btn.btn-social-icon.btn-google  
+                  span.fa.fa-google 
+            form(method='POST' action='/signup')#signUp.tab-pane.fade
+              div.form-group
+                <input name="name" class="form-control" type='text' aria-describedby='emailHelp' placeholder="&#xf007;   Nombre"></input>
+              div.form-group
+                <input name="email" class="form-control" type='email' aria-describedby='emailHelp' placeholder="&#xf0e0;   Correo Electronico"></input>
+              div.form-group
+                <input name="password" class="form-control" type='password' placeholder="&#xf023;     Contraseña"></input>
+              button.btn.btn-primary.btnSign.mb-2 REGISTRATE
+        div.d-flex.justify-content-center.mt-2.pb-4#message-log
+          p Al registrarte, aceptas nuestros <a href=# >términos y condiciones</a> y <a href=# >politicas de privacidad</a>
         
 block header
   header.navbar.sticky-top

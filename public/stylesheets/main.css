@@ -130,6 +130,12 @@ main {
 #signUp {
   text-align: center; }
 
+#archivero .container {
+  border-radius: 10px;
+  background-color: #ffffff !important; }
+  #archivero .container p {
+    font-size: 24px; }
+
 #proyectos .titles i {
   color: #f57f17; }
 
@@ -153,8 +159,35 @@ main {
   padding-right: 5px;
   padding-left: 5px; }
 
+#proyectos .data .wrapper {
+  position: relative;
+  width: 50%;
+  min-width: 220px;
+  border-radius: 10px;
+  background-color: #e4e4e4 !important; }
+
 #proyectos .data img {
-  max-width: 200px; }
+  min-width: 220px;
+  display: block;
+  width: 100%; }
+
+#proyectos .data .overlay {
+  font-size: 14px;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  background: black;
+  background: rgba(0, 0, 0, 0.5);
+  /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity: 1;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 0px 0px 10px 10px; }
 
 #proyectos .data-proyect {
   background-color: white;

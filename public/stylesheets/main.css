@@ -45,7 +45,7 @@ footer {
     color: #f5a623; }
 
 main {
-  margin-left: 160px;
+  margin-left: 160px !important;
   /* Same as the width of the sidenav */
   font-size: 28px;
   /* Increased text to enable scrolling */
@@ -189,3 +189,128 @@ main {
       font-size: 20px;
       background-color: white;
       padding: 0 5px; }
+
+.backlogs {
+  margin-right: 10px; }
+  .backlogs h3 {
+    font-size: 20px;
+    font-weight: bold; }
+  .backlogs .teams {
+    min-height: 395px; }
+  .backlogs .backlog {
+    min-height: 366px;
+    background-color: #ffffff;
+    border-radius: 0px 0px 10px 10px; }
+    .backlogs .backlog p {
+      font-size: 18px; }
+    .backlogs .backlog a {
+      font-size: 16px;
+      font-weight: normal;
+      color: #f57f17; }
+  .backlogs .header {
+    border-radius: 10px 10px 0px 0px;
+    background-color: #fff1d0;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.12);
+    min-height: 80px; }
+    .backlogs .header i {
+      color: #f57f17;
+      position: relative;
+      top: 60px;
+      font-size: 40px; }
+  .backlogs .config div {
+    border-radius: 10px;
+    background-color: #ffffff; }
+    .backlogs .config div #teams {
+      margin-right: 50%; }
+    .backlogs .config div h4 {
+      display: inline-block;
+      padding-right: 10px;
+      font-size: 18px;
+      font-weight: bold; }
+    .backlogs .config div i {
+      color: #f57f17; }
+    .backlogs .config div a {
+      font-size: 16px;
+      font-weight: normal;
+      color: #f57f17; }
+    .backlogs .config div p {
+      font-size: 18px;
+      font-weight: normal; }
+
+.side-modal {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1022;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.5s; }
+  .side-modal a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s; }
+  .side-modal .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px; }
+  .side-modal h2 {
+    font-size: 20px;
+    font-weight: bold; }
+  .side-modal form label {
+    font-size: 13px;
+    font-weight: bold; }
+  .side-modal form .form-control {
+    border: none;
+    border-bottom: 2px solid #f57f17;
+    border-radius: 0px;
+    font-size: 13px;
+    color: #4a4a4a; }
+    .side-modal form .form-control:focus {
+      box-shadow: none; }
+  .side-modal form button {
+    border-radius: 7px;
+    background-color: #f57f17;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    outline: inherit;
+    cursor: pointer; }
+  .side-modal form #closeSideModal {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 13px;
+    font-weight: bold; }
+
+#overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1021;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s; }
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px; }
+  .sidenav a {
+    font-size: 18px; } }

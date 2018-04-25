@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  div#overlay
   main.tab-content.container
     div#home.tab-pane.fade.show.active
       img(src="images/empty_state_proyect.png").img-fluid
@@ -39,12 +40,32 @@ block content
             div.col-md-12
               b Descripcion
               p Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age. To our children, cameras not so feature rich with LCD screens and built in Wi-Fi is as foreign as Atari.
-      div.row
+      div.row.backlogs
         div.col-md-4
           h3 Product Backlog
+          div.header
+            i.fa.fa-plus-square
+          div.backlog
+            div.pt-5
+              img(src="images/reader.png").img-fluid
+              p Para comenzar a organizar tu proyecto, empecemos a crear las <a href="#" id="openSideModal">tareas</a>
         div.col-md-4
           h3 Release Backlog
-        div.col-md-4
+          div.header
+          div.backlog
+            div.pt-5
+              img(src="images/reader.png").img-fluid
+              p Una vez validadas tus tareas arrastralas a esta sección.
+        div.col-md-4.config
+          div.mt-4
+            h4 Configurar Release
+            i.fa.fa-long-arrow-right
+          div.mt-3.teams
+            h4#teams Equipos
+            a(href="#") Agregar
+            div.pt-5
+              img(src="images/baloom.png").img-fluid
+              p A nadie le gusta trabajar solo, comenzemos agregando <a href="#">equipos</a>
     div#archivero.tab-pane.fade
       h1 archivero
     div#equipos.tab-pane.fade
@@ -75,3 +96,38 @@ block sidemenu
         a(href="/logout").logout
           img(src="images/logout.png").img-profile
     
+block side-modal
+  div#mySidenav.side-modal.pt-3
+    h2.pl-3 Agregar Historia de Usuario
+    form.pb-3.pl-3
+      div.form-group
+        label Narrativa de Historia
+        input#history.form-control(type='text', placeholder='Escriba un nombre corto')
+      div.form-row
+        div.form-group.col-md-6
+          label(for='priority') Prioridad
+          input#priority.form-control(type='text', placeholder='Escriba la prioridad')
+        div.form-group.col-md-6
+          label(for='size') Tamaño
+          input#size.form-control(type='text', placeholder='Escriba el tamaño')
+      div.form-group
+        label(for='how') Como
+        textarea#how.form-control(rows='3', placeholder='Escriba como va a realizar la tarea…')
+      div.form-group
+        label(for='want') Quiero
+        textarea#want.form-control(rows='3', placeholder='Escriba las funcionalidades de la tarea…')
+      div.form-group
+        label(for='way') De tal manera
+        textarea#way.form-control(rows='3', placeholder='Escriba de que manera realizara la tarea…')
+      div.form-group
+        label Dado
+        input#give.form-control(type='text', placeholder='Escriba dado algo')
+      div.form-group
+        label Cuando
+        input#when.form-control(type='text', placeholder='Escriba cuando algo')
+      div.form-group
+        label Entonces
+        input#exampleInputEmail1.form-control(type='text', placeholder='Escriba el Entonces de algo ')
+      div.d-flex.justify-content-end
+        button#closeSideModal.pr-2 Cancelar
+        button Agregar

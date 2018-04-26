@@ -130,11 +130,39 @@ main {
 #signUp {
   text-align: center; }
 
+#archivero h2 {
+  font-size: 30px;
+  font-weight: bold; }
+
 #archivero .container {
   border-radius: 10px;
   background-color: #ffffff !important; }
   #archivero .container p {
     font-size: 24px; }
+
+#equipos h2, #miembros h2 {
+  font-size: 30px;
+  font-weight: bold; }
+
+#equipos button, #miembros button {
+  border-radius: 7px;
+  background-color: #ffffff;
+  border: solid 3px #f57f17;
+  font-size: 13px;
+  color: #f57f17;
+  padding-bottom: 0px;
+  padding-top: 0px; }
+
+#equipos .container, #miembros .container {
+  border-radius: 10px;
+  background-color: #ffffff; }
+
+#equipos p, #miembros p {
+  font-size: 24px; }
+
+#equipos a, #miembros a {
+  text-align: center;
+  color: #f57f17; }
 
 #proyectos .titles i {
   color: #f57f17; }

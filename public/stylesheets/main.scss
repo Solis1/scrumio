@@ -62,7 +62,6 @@ main{
   text-align: center;
   #home{
     a{
-      // text-decoration: none;
       color: $color-btn;
     }
   }
@@ -159,12 +158,42 @@ main{
 }
 
 #archivero{
+  h2{
+    font-size: 30px;
+    font-weight: bold;
+  }
   .container{
     border-radius: 10px;
     background-color: #ffffff !important;
     p{
       font-size: 24px;
     }
+  }
+}
+#equipos, #miembros{
+  h2{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  button{
+    border-radius: 7px;
+    background-color: #ffffff;
+    border: solid 3px #f57f17;
+    font-size: 13px;
+    color: #f57f17;
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+  .container{
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
+  p{
+    font-size: 24px;
+  }
+  a{
+    text-align: center;
+    color: $color-btn;
   }
 }
 

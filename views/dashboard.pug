@@ -69,13 +69,30 @@ block content
               img(src="images/baloom.png").img-fluid
               p A nadie le gusta trabajar solo, comenzemos agregando <a href="#">equipos</a>
     div#archivero.tab-pane.fade
+      div.d-flex.flex-row.mt-3
+        div
+          h2 Archivero de Proyectos
       div.container.mt-3
         img(src="images/panzon.png")
         p Parece que no tienes ningún proyecto archivado, pero no te asustes. Una vez que terminas tus proyectos podrás verlos aqui.
     div#equipos.tab-pane.fade
-      h1 equipos
+      div.d-flex.mt-3
+        div
+          h2 Listado de Equipos
+        div.ml-auto 
+          button.btn AGREGAR EQUIPO
+      div.container.mt-3
+        img(src="images/snoppy.png").img-fluid
+        p Para poder agregar tus equipos primero necesitamos armarlos. Registra tus equipos <a href="#">aqui</a>.
     div#miembros.tab-pane.fade
-      h1 miembros
+      div.d-flex.mt-3
+        div
+          h2 Listado de Miembros
+        div.ml-auto 
+          button.btn AGREGAR MIEMBROS
+      div.container.mt-3
+        img(src="images/abrazame.png").img-fluid
+        p Oh no! Parece que aún no tienes miembros! Registra algunos <a href="#">aqui</a>.
 block header
   header.navbar.sticky-top.margin-sidemenu.d-flex
     form.form-inline.mr-auto

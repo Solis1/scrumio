@@ -80,7 +80,7 @@ block content
         div
           h2 Listado de Equipos
         div.ml-auto 
-          button.btn AGREGAR EQUIPO
+          button#addTeam.btn AGREGAR EQUIPO
       div.container.mt-3
         img(src="images/snoppy.png").img-fluid
         p Para poder agregar tus equipos primero necesitamos armarlos. Registra tus equipos <a href="#">aqui</a>.
@@ -141,14 +141,14 @@ block side-modal
         label(for='way') De tal manera
         textarea#way.form-control(rows='3', placeholder='Escriba de que manera realizara la tarea…')
       div.form-group
-        label Dado
+        label(for='giveIt') Dado
         input#give.form-control(type='text', placeholder='Escriba dado algo')
       div.form-group
-        label Cuando
+        label(for='when') Cuando
         input#when.form-control(type='text', placeholder='Escriba cuando algo')
       div.form-group
-        label Entonces
-        input#exampleInputEmail1.form-control(type='text', placeholder='Escriba el Entonces de algo ')
+        label(for='then') Entonces
+        input#then.form-control(type='text', placeholder='Escriba el Entonces de algo ')
       div.d-flex.justify-content-end
         button#closeSideModal.pr-2 Cancelar
         button Agregar

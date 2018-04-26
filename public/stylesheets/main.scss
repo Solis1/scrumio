@@ -2,6 +2,17 @@
 
 $color-btn: #f57f17;
 $font-input: FontAwesome, "Open Sans", Verdana, sans-serif;
+@mixin close-modal-props(){
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 13px;
+  font-weight: bold;
+}
 
 header{
   font-size: 36px;
@@ -194,6 +205,42 @@ main{
   a{
     text-align: center;
     color: $color-btn;
+  }
+}
+
+#modalAddTeam{
+  .choose-team{
+    text-align: center;
+  }
+  h4{
+    font-size: 20px;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  h5{
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  a{
+    color: $color-btn;
+  }
+  label{
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .form-control{
+    border: none;
+    border-bottom: 2px solid #f57f17;
+    border-radius: 0px;
+    font-size: 13px;
+    color: #4a4a4a;
+    &:focus{
+       box-shadow: none;
+    }
+  }
+  .closeModal{
+    @include close-modal-props();
   }
 }
 
@@ -419,15 +466,7 @@ main{
         cursor: pointer;
       }
       #closeSideModal{
-        background: none;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-        font-size: 13px;
-        font-weight: bold;
+        @include close-modal-props();
       }
     }
 }

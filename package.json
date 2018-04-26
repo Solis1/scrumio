@@ -9,6 +9,7 @@
   "dependencies": {
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.18.2",
+    "bootbox": "^4.4.0",
     "bootstrap": "^4.0.0",
     "bootstrap-sass": "^3.3.7",
     "connect-flash": "~0.1.1",

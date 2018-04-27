@@ -1,4 +1,5 @@
 $(document).ready(() =>{
+  
   $("#closeSideModal").click(()=>{
     $("#mySidenav").width("0px");
     $("#mySidenav").css("overflow-y","hidden");
@@ -19,6 +20,7 @@ $(document).ready(() =>{
     $("#overlay").css("opacity","0.9");
   });
 
+  var dialog;
   $("#addTeam").click(()=>{
     body = `<div id="modalAddTeam">
               <h4>Crear Nuevo Equipo</h4>
@@ -36,10 +38,14 @@ $(document).ready(() =>{
               </div>
             </div>`;
 
-    var dialog = bootbox.dialog({
+    dialog = bootbox.dialog({
       message: body,
       closeButton: true
     });
+  });
+
+  $(document).on("click", ".closeModal", ()=>{
+    dialog.modal("hide");
   });
 
 });

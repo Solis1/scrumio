@@ -1,0 +1,69 @@
+extends layout
+
+block header
+  header.navbar.sticky-top.margin-sidemenu.d-flex
+    form.form-inline.mr-auto
+      <input class="form-control mr-sm-2" type="search" placeholder="&#xf002; Busca lo que quieras..." aria-label="Search"></input>
+    div.mr-4
+      button.btn.btn-createProy.mr-3 Nuevo Proyecto
+      img(src="images/leader.png").img-profile
+    div.d-inline-block.mr-4
+      p #{userName.name}
+      p Perfil
+      
+block sidemenu
+  div.sidenav
+    img(src="images/logo.png")
+    div.menu.mt-5
+      div.nav.nav-tabs(role='tablist')
+        a.nav-item.nav-link(href='/dashboard') Home
+        a.nav-item.nav-link(href='/dashboard') Proyectos
+        a.nav-item.nav-link(href='/dashboard') Archivero
+        a.nav-item.nav-link(href='/dashboard') Equipos
+        a.nav-item.nav-link(href='/dashboard') Miembros
+      div.fixed-bottom.ml-5.mb-3
+        a(href="/logout").logout
+          img(src="images/logout.png").img-profile
+
+block content
+  main.container-fluid
+    div#profile.container
+      div.row
+        div.col-md-4.personal.mt-3
+          div.wrapper.mx-auto.mt-3
+            img(src="images/osito.png").img-fluid
+            div.overlay <i class="fa fa-camera"></i> Subir Foto
+          div.form-group
+            label(for='name') Nombre
+            input#name.form-control(type='text', value=userName.name)
+          div.form-group
+            label(for='name') Email
+            input#email.form-control(type='text', value=userName.email)
+          div.form-group
+            label(for='birthday') Fecha de Nacimiento
+            input#birthday.form-control(type='date', value=userName.birthday)
+        div.col-md-7.profesional.mt-3.ml-5
+          div.row.p-3
+            div.pt-3
+              h4 Habilidades
+            div.ml-auto
+              button.btn AGREGAR
+          div.row
+            div.pl-3
+              p Cuentanos … ¿En qué eres bueno?
+          div.row
+            table.table
+              thead
+                tr
+                  th(scope='col') Nombre
+                  th(scope='col') Tipo
+                  th(scope='col') 
+                  th(scope='col') 
+              tbody
+                tr
+                  td Mark
+                  td Otto
+                  td 
+                    i.fa.fa-pencil
+                  td 
+                    button.btn ELIMINAR

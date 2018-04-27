@@ -30,6 +30,13 @@ header {
     width: 462px !important; }
     header .form-control::placeholder {
       color: #ffffff; }
+  header a {
+    text-decoration: inherit;
+    color: inherit; }
+  header a:hover {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer; }
 
 body {
   background-color: #ededed !important; }
@@ -45,7 +52,7 @@ footer {
     color: #f5a623; }
 
 main {
-  margin-left: 160px !important;
+  padding-left: 10% !important;
   /* Same as the width of the sidenav */
   font-size: 28px;
   /* Increased text to enable scrolling */
@@ -92,6 +99,92 @@ main {
       padding: 0px;
       width: 0; }
 
+#profile .personal, #profile .profesional {
+  border-radius: 10px;
+  background-color: #ffffff; }
+
+#profile .personal .form-group {
+  text-align: left; }
+
+#profile .personal label {
+  font-size: 13px;
+  font-weight: bold; }
+
+#profile .personal .form-control {
+  border: none;
+  border-bottom: 2px solid #f57f17;
+  border-radius: 0px;
+  font-size: 13px;
+  color: #4a4a4a; }
+  #profile .personal .form-control:focus {
+    box-shadow: none; }
+
+#profile .profesional {
+  text-align: center; }
+  #profile .profesional p {
+    font-size: 18px;
+    color: #4a4a4a; }
+  #profile .profesional h4 {
+    font-size: 18px;
+    font-weight: bold; }
+  #profile .profesional button {
+    border-radius: 7px;
+    background-color: #f57f17;
+    border: solid 3px #f57f17;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    padding-bottom: 0px;
+    padding-top: 0px; }
+  #profile .profesional table thead tr th {
+    border-top: none; }
+  #profile .profesional table th {
+    font-size: 14px; }
+  #profile .profesional table td {
+    font-size: 14px; }
+    #profile .profesional table td button {
+      border-radius: 7px;
+      background-color: #ffffff;
+      border: solid 3px #f57f17;
+      font-size: 13px;
+      color: #f57f17;
+      padding-bottom: 0px;
+      padding-top: 0px; }
+    #profile .profesional table td i {
+      color: #f57f17;
+      font-size: 25px; }
+
+#profile .wrapper {
+  position: relative;
+  top: 10px;
+  width: 50%;
+  min-width: 250px;
+  border-radius: 10px;
+  background-color: #e4e4e4 !important; }
+
+#profile img {
+  min-width: 220px;
+  display: block;
+  width: 100%; }
+
+#profile .overlay {
+  font-size: 14px;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  background: black;
+  background: rgba(0, 0, 0, 0.5);
+  /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity: 1;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 0px 0px 10px 10px; }
+
 #logUser {
   border-radius: 10px;
   background-color: #ffffff;
@@ -134,10 +227,10 @@ main {
   font-size: 30px;
   font-weight: bold; }
 
-#archivero .container {
+#archivero .container-1 {
   border-radius: 10px;
   background-color: #ffffff !important; }
-  #archivero .container p {
+  #archivero .container-1 p {
     font-size: 24px; }
 
 #equipos h2, #miembros h2 {
@@ -153,7 +246,7 @@ main {
   padding-bottom: 0px;
   padding-top: 0px; }
 
-#equipos .container, #miembros .container {
+#equipos .container-1, #miembros .container-1 {
   border-radius: 10px;
   background-color: #ffffff; }
 
@@ -229,6 +322,7 @@ main {
 
 #proyectos .data .wrapper {
   position: relative;
+  top: 10px;
   width: 50%;
   min-width: 220px;
   border-radius: 10px;

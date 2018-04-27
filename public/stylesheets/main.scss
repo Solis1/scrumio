@@ -2,7 +2,16 @@
 
 $color-btn: #f57f17;
 $font-input: FontAwesome, "Open Sans", Verdana, sans-serif;
-@mixin close-modal-props(){
+@mixin btn-background-white(){
+  border-radius: 7px;
+  background-color: #ffffff;
+  border: solid 3px #f57f17;
+  font-size: 13px;
+  color: #f57f17;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+@mixin cancel-modal-props(){
   background: none;
   color: inherit;
   border: none;
@@ -12,6 +21,55 @@ $font-input: FontAwesome, "Open Sans", Verdana, sans-serif;
   outline: inherit;
   font-size: 13px;
   font-weight: bold;
+}
+@mixin img-with-overlay($img-min-width){
+  .wrapper{
+    position: relative;
+    top: 10px;
+    width: 50%;
+    min-width: $img-min-width;
+    border-radius: 10px;
+    background-color: #e4e4e4 !important;
+  }
+  img{
+    min-width: 220px;
+    display: block;
+    width: 100%;
+  }
+  .overlay{
+    font-size: 14px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:1;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+  }
+}
+
+@mixin form-style(){
+  label{
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .form-control{
+    border: none;
+    border-bottom: 2px solid #f57f17;
+    border-radius: 0px;
+    font-size: 13px;
+    color: #4a4a4a;
+    &:focus{
+       box-shadow: none;
+    }
+  }
 }
 
 header{
@@ -50,6 +108,15 @@ header{
       color: #ffffff;
     }
   }
+  a{
+    text-decoration: inherit;
+    color: inherit;
+  }
+  a:hover{
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
 }
 body{
   background-color: #ededed !important;
@@ -67,7 +134,7 @@ footer{
 }
 
 main{
-  margin-left: 160px !important; /* Same as the width of the sidenav */
+  padding-left: 10% !important; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   text-align: center;
@@ -123,6 +190,63 @@ main{
   }
 }
 
+#profile{
+  .personal, .profesional{
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
+  .personal{
+    .form-group{
+      text-align: left;
+    }
+    @include form-style();
+  }
+  .profesional{
+    text-align: center;
+    p{
+      font-size: 18px;
+      color: #4a4a4a;
+    }
+    h4{
+      font-size: 18px;
+      font-weight: bold;
+    }
+    button{
+      border-radius: 7px;
+      background-color: #f57f17;
+      border: solid 3px #f57f17;
+      font-size: 13px;
+      font-weight: bold;
+      color: #ffffff;
+      padding-bottom: 0px;
+      padding-top: 0px;
+    }
+    table{
+      thead{
+        tr{
+          th{
+            border-top: none;
+          }
+        }
+      }
+      th{
+        font-size: 14px;
+      }
+      td{
+        font-size: 14px;
+        button{
+          @include btn-background-white();
+        }
+        i{
+          color: #f57f17;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  @include img-with-overlay(250px);
+}
+
 #logUser{
   border-radius: 10px;
   background-color: #ffffff;
@@ -173,7 +297,7 @@ main{
     font-size: 30px;
     font-weight: bold;
   }
-  .container{
+  .container-1{
     border-radius: 10px;
     background-color: #ffffff !important;
     p{
@@ -195,7 +319,7 @@ main{
     padding-bottom: 0px;
     padding-top: 0px;
   }
-  .container{
+  .container-1{
     border-radius: 10px;
     background-color: #ffffff;
   }
@@ -225,22 +349,9 @@ main{
   a{
     color: $color-btn;
   }
-  label{
-    font-size: 13px;
-    font-weight: bold;
-  }
-  .form-control{
-    border: none;
-    border-bottom: 2px solid #f57f17;
-    border-radius: 0px;
-    font-size: 13px;
-    color: #4a4a4a;
-    &:focus{
-       box-shadow: none;
-    }
-  }
+  @include form-style();
   .closeModal{
-    @include close-modal-props();
+    @include cancel-modal-props();
   }
 }
 
@@ -271,35 +382,7 @@ main{
     }
   }
   .data{
-    .wrapper{
-      position: relative;
-      width: 50%;
-      min-width: 220px;
-      border-radius: 10px;
-      background-color: #e4e4e4 !important;
-    }
-    img{
-      min-width: 220px;
-      display: block;
-      width: 100%;
-    }
-    .overlay{
-      font-size: 14px;
-      color: #ffffff;
-      position: absolute;
-      bottom: 0;
-      background: rgb(0, 0, 0);
-      background: rgba(0, 0, 0, 0.5); /* Black see-through */
-      color: #f1f1f1;
-      width: 100%;
-      transition: .5s ease;
-      opacity:1;
-      color: white;
-      font-size: 20px;
-      padding: 20px;
-      text-align: center;
-      border-radius: 0px 0px 10px 10px;
-    }
+    @include img-with-overlay(220px);
   }
   .data-proyect{
     background-color: white;
@@ -441,20 +524,7 @@ main{
       font-weight: bold;
     }
     form{
-      label{
-        font-size: 13px;
-        font-weight: bold;
-      }
-      .form-control{
-        border: none;
-        border-bottom: 2px solid #f57f17;
-        border-radius: 0px;
-        font-size: 13px;
-        color: #4a4a4a;
-        &:focus{
-           box-shadow: none;
-        }
-      }
+      @include form-style();
       button{
         border-radius: 7px;
         background-color: #f57f17;
@@ -466,7 +536,7 @@ main{
         cursor: pointer;
       }
       #closeSideModal{
-        @include close-modal-props();
+        @include cancel-modal-props();
       }
     }
 }

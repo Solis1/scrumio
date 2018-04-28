@@ -4,7 +4,7 @@ module.exports = function(app, passport) {
       res.render('profile', {
         title: "Profile",
         userName: req.user.local
-      }); 
+      });
   });
 
 }

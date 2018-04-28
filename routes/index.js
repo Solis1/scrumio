@@ -16,10 +16,11 @@ module.exports = function(app, passport) {
         failureFlash : true // allow flash messages
     }));
 
-    app.get('/dashboard', isLoggedIn, function(req, res) {
+    app.get('/dashboard:tab?', isLoggedIn, function(req, res) {
         res.render('dashboard', {
           title: "Dashboard",
-          userName: req.user.local.name
+          userName: req.user.local.name,
+          tabActive: req.params.tab == 'undefined' ? 'home' : req.params.tab
         }); // load the index.ejs file
     });
 

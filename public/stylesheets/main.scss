@@ -331,7 +331,18 @@ main{
     color: $color-btn;
   }
 }
-
+#modalAddAbility{
+  @include form-style();
+  button{
+    @include btn-background-white();
+  }
+  .closeModal{
+    @include cancel-modal-props();
+  }
+  select{
+    border: solid 3px #f57f17;
+  }
+}
 #modalAddTeam{
   .choose-team{
     text-align: center;

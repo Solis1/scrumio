@@ -257,6 +257,42 @@ main {
   text-align: center;
   color: #f57f17; }
 
+#modalAddAbility label {
+  font-size: 13px;
+  font-weight: bold; }
+
+#modalAddAbility .form-control {
+  border: none;
+  border-bottom: 2px solid #f57f17;
+  border-radius: 0px;
+  font-size: 13px;
+  color: #4a4a4a; }
+  #modalAddAbility .form-control:focus {
+    box-shadow: none; }
+
+#modalAddAbility button {
+  border-radius: 7px;
+  background-color: #ffffff;
+  border: solid 3px #f57f17;
+  font-size: 13px;
+  color: #f57f17;
+  padding-bottom: 0px;
+  padding-top: 0px; }
+
+#modalAddAbility .closeModal {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 13px;
+  font-weight: bold; }
+
+#modalAddAbility select {
+  border: solid 3px #f57f17; }
+
 #modalAddTeam .choose-team {
   text-align: center; }
 

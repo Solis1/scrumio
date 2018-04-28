@@ -1,5 +1,5 @@
 $(document).ready(() =>{
-  
+
   $("#closeSideModal").click(()=>{
     $("#mySidenav").width("0px");
     $("#mySidenav").css("overflow-y","hidden");
@@ -44,8 +44,53 @@ $(document).ready(() =>{
     });
   });
 
+  $("#addAbility").click(()=>{
+    body = `<div id="modalAddAbility">
+              <h4>Crear Nueva Habilidad</h4>
+              <form method='POST' action='/abilities'>
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input name="name" id="createTeam" type="text" placeholder="Escribe el nombre de tu Habilidad" class="form-control"/>
+                </div>
+                <div class='form-group'>
+                  <select name="type" class="custom-select">
+                    <option selected>Master</option>
+                    <option value="1">Senior</option>
+                    <option value="2">Junior</option>
+                    <option value="3">Amateur</option>
+                  </select>
+                </div>
+                <div class="float-right">
+                  <button type="button" class="closeModal">Cancelar</button>
+                  <button type="submit" class='btn btnGuardar'>Guardar</button>
+                </div>
+              </form>
+            </div>`;
+
+    dialog = bootbox.dialog({
+      message: body,
+      closeButton: true
+    });
+  });
+
   $(document).on("click", ".closeModal", ()=>{
     dialog.modal("hide");
   });
+
+  // $(".send-active").click(function(){
+  //   var active = $(this).html();
+  //   console.log(active);
+  //   $.ajax({
+  //     url: '/dashboard'+active,
+  //     type: "GET"
+  //   }).done(function() {
+  //     })
+  //     .fail(function() {
+  //       alert( "error" );
+  //     })
+  //     .always(function() {
+  //     });
+  //
+  // });
 
 });

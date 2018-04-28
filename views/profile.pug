@@ -16,11 +16,11 @@ block sidemenu
     img(src="images/logo.png")
     div.menu.mt-5
       div.nav.nav-tabs(role='tablist')
-        a.nav-item.nav-link(href='/dashboard') Home
-        a.nav-item.nav-link(href='/dashboard') Proyectos
-        a.nav-item.nav-link(href='/dashboard') Archivero
-        a.nav-item.nav-link(href='/dashboard') Equipos
-        a.nav-item.nav-link(href='/dashboard') Miembros
+        a.nav-item.nav-link.send-active(href='/dashboardhome') Home
+        a.nav-item.nav-link.send-active(href='/dashboardproyectos') Proyectos
+        a.nav-item.nav-link.send-active(href='/dashboardarchivero') Archivero
+        a.nav-item.nav-link.send-active(href='/dashboardequipos') Equipos
+        a.nav-item.nav-link.send-active(href='/dashboardmiembros') Miembros
       div.fixed-bottom.ml-5.mb-3
         a(href="/logout").logout
           img(src="images/logout.png").img-profile
@@ -47,7 +47,7 @@ block content
             div.pt-3
               h4 Habilidades
             div.ml-auto
-              button.btn AGREGAR
+              button#addAbility.btn AGREGAR
           div.row
             div.pl-3
               p Cuentanos … ¿En qué eres bueno?

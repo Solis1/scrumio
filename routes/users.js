@@ -1,11 +1,7 @@
+const usersController = require('../controllers/usersController');
 module.exports = function(app, passport) {
 
-  app.get('/profile', isLoggedIn, function(req, res) {
-      res.render('profile', {
-        title: "Profile",
-        userName: req.user.local
-      });
-  });
+  app.get('/profile', isLoggedIn, usersController.index);
 
 }
 

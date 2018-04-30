@@ -152,7 +152,8 @@ main {
       padding-top: 0px; }
     #profile .profesional table td i {
       color: #f57f17;
-      font-size: 25px; }
+      font-size: 25px;
+      cursor: pointer; }
 
 #profile .wrapper {
   position: relative;
@@ -161,11 +162,10 @@ main {
   min-width: 250px;
   border-radius: 10px;
   background-color: #e4e4e4 !important; }
-
-#profile img {
-  min-width: 220px;
-  display: block;
-  width: 100%; }
+  #profile .wrapper img {
+    min-width: 220px;
+    display: block;
+    width: 100%; }
 
 #profile .overlay {
   font-size: 14px;
@@ -363,11 +363,10 @@ main {
   min-width: 220px;
   border-radius: 10px;
   background-color: #e4e4e4 !important; }
-
-#proyectos .data img {
-  min-width: 220px;
-  display: block;
-  width: 100%; }
+  #proyectos .data .wrapper img {
+    min-width: 220px;
+    display: block;
+    width: 100%; }
 
 #proyectos .data .overlay {
   font-size: 14px;

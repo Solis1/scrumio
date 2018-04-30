@@ -30,11 +30,11 @@ $font-input: FontAwesome, "Open Sans", Verdana, sans-serif;
     min-width: $img-min-width;
     border-radius: 10px;
     background-color: #e4e4e4 !important;
-  }
-  img{
-    min-width: 220px;
-    display: block;
-    width: 100%;
+    img{
+      min-width: 220px;
+      display: block;
+      width: 100%;
+    }
   }
   .overlay{
     font-size: 14px;
@@ -240,6 +240,7 @@ main{
         i{
           color: #f57f17;
           font-size: 25px;
+          cursor: pointer;
         }
       }
     }

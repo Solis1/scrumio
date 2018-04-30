@@ -52,18 +52,24 @@ block content
             div.pl-3
               p Cuentanos … ¿En qué eres bueno?
           div.row
-            table.table
-              thead
-                tr
-                  th(scope='col') Nombre
-                  th(scope='col') Tipo
-                  th(scope='col') 
-                  th(scope='col') 
-              tbody
-                tr
-                  td Mark
-                  td Otto
-                  td 
-                    i.fa.fa-pencil
-                  td 
-                    button.btn ELIMINAR
+            if abilities != ''
+              table.table
+                thead
+                  tr
+                    th(scope='col') Nombre
+                    th(scope='col') Tipo
+                    th(scope='col') 
+                    th(scope='col') 
+                tbody
+                  each val in abilities
+                    tr
+                      td #{val.name}
+                      td #{val.type}
+                      td 
+                        i.fa.fa-pencil
+                      td 
+                        button.btn ELIMINAR
+            else
+              div.mt-3.mx-auto
+                img(src="images/panzon.png")
+                p Agregar tus habilidades nos ayudan a saber en que área puedes destacar!

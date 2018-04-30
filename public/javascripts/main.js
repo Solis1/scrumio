@@ -54,10 +54,10 @@ $(document).ready(() =>{
                 </div>
                 <div class='form-group'>
                   <select name="type" class="custom-select">
-                    <option selected>Master</option>
-                    <option value="1">Senior</option>
-                    <option value="2">Junior</option>
-                    <option value="3">Amateur</option>
+                    <option value='Master'>Master</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Amateur" selected>Amateur</option>
                   </select>
                 </div>
                 <div class="float-right">

@@ -33,15 +33,18 @@ block content
           div.wrapper.mx-auto.mt-3
             img(src="images/osito.png").img-fluid
             div.overlay <i class="fa fa-camera"></i> Subir Foto
-          div.form-group
-            label(for='name') Nombre
-            input#name.form-control(type='text', value=userName.name)
-          div.form-group
-            label(for='name') Email
-            input#email.form-control(type='text', value=userName.email)
-          div.form-group
-            label(for='birthday') Fecha de Nacimiento
-            input#birthday.form-control(type='date', value=userName.birthday)
+          div(data-id=user_id)
+            div.form-group
+              label(for='name') Nombre
+              input#name.form-control(type='text', value=userName.name)
+            div.form-group
+              label(for='email') Email
+              input#email.form-control(type='text', value=userName.email)
+            div.form-group
+              label(for='birthday') Fecha de Nacimiento
+              input#birthday.form-control(type='date', value=userName.birthday)
+            div.form-group
+              button.btn.update Actualizar
         div.col-md-7.profesional.mt-3.ml-5
           div.row.p-3
             div.pt-3
@@ -62,13 +65,16 @@ block content
                     th(scope='col') 
                 tbody
                   each val in abilities
-                    tr
-                      td #{val.name}
-                      td #{val.type}
+                    tr(id=val._id)
+                      td.abilityName #{val.name}
+                      td.abilityType #{val.type}
                       td 
-                        i.fa.fa-pencil
+                        i.fa.fa-pencil.editAbility
                       td 
-                        button.btn ELIMINAR
+                        button.btn.deleteAbility ELIMINAR
+              div.mt-3.mx-auto.nonAbility.d-none
+                img(src="images/panzon.png")
+                p Agregar tus habilidades nos ayudan a saber en que área puedes destacar!
             else
               div.mt-3.mx-auto
                 img(src="images/panzon.png")

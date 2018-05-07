@@ -4,6 +4,10 @@ module.exports = function(app, passport) {
 
   app.post('/abilities', isLoggedIn, abilitiesController.create);
 
+  app.delete('/abilities/:id', isLoggedIn, abilitiesController.remove);
+
+  app.put('/abilities/:id', isLoggedIn, abilitiesController.update);
+
 }
 
 function isLoggedIn(req, res, next) {

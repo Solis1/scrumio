@@ -3,6 +3,8 @@ module.exports = function(app, passport) {
 
   app.get('/profile', isLoggedIn, usersController.index);
 
+  app.put('/users/:id', isLoggedIn, usersController.update)
+
 }
 
 function isLoggedIn(req, res, next) {

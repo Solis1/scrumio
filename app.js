@@ -13,6 +13,7 @@ const MongoStore    = require('connect-mongo')(session);
 const configDB      = require('./config/database.js');
 const app = express();
 
+
 mongoose.connect(configDB.urlPro);
 const db = mongoose.connection;
 require('./config/passport')(passport);
@@ -36,7 +37,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
 app.use('/js', express.static(__dirname + '/node_modules/bootbox')); // redirect JS jQuery
+app.use('/toast', express.static(__dirname + '/node_modules/jquery-toast-plugin/dist'));
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use('/fullpage', express.static(__dirname + '/node_modules/fullpage.js'));
 
 // error handler
 app.use(function(err, req, res, next) {

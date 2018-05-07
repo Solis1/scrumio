@@ -30,11 +30,7 @@ function create(request, response, next) {
           abilities_db = null;
         }else{
           abilities_db = docs;
-          response.render('profile', {
-            title: "Profile",
-            userName: request.user.local,
-            abilities: abilities_db
-          });
+          response.redirect('/profile');
         }
       });
     }
@@ -43,11 +39,59 @@ function create(request, response, next) {
 }
 
 function update(request, response, next) {
+  const name = request.body.name;
+  const type = request.body.type;
 
+  Ability.findOne({
+    _id: mongoose.Types.ObjectId(request.params.id)
+  }, function (err, doc){
+  doc.name = name;
+  doc.type = type;
+  doc.save((err, obj) => {
+    if (err) {
+      response.json({
+        error: true,
+        message: 'Habilidad no Guardada',
+        objs: err
+      });
+    } else {
+      response.json({
+        error: false,
+        message: 'Habilidad Guardada',
+        objs: obj
+      });
+    }
+  });;
+});
 }
 
 function remove(request, response, next) {
-
+  const id = request.params.id;
+  if (id) {
+    Ability.remove({
+      _id: id
+    }, function(err) {
+      if (err) {
+        response.json({
+          error: true,
+          message: 'Habilidad no Eliminado.',
+          objs: {}
+        });
+      } else {
+        response.json({
+          error: false,
+          message: 'Habilidad Eliminada.',
+          objs: {}
+        });
+      }
+    });
+  } else {
+    response.json({
+      error: true,
+      message: 'Habilidad no Existe',
+      objs: {}
+    });
+  }
 }
 
 module.exports = {

@@ -3,11 +3,11 @@ const express = require('express');
 const router = express.Router();
 
 
-router.post('/', proyectoControllers.create);
+router.post('/', proyecsControllers.create);
 
-router.get('/:page?', proyectoControllers.index);
+router.get('/:page?', proyectsControllers.index);
 
-router.get('/ver/:id', proyectoControllers.show);
+router.get('/ver/:id', proyectsControllers.show);
 
 /*
 

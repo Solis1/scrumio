@@ -13,13 +13,13 @@ function create(req, res, next){
     if (err) {
       res.json({
         err: true,
-        message: 'No se pudo guardar pelicula',
+        message: 'No se pudo guardar el proyecto',
         objs: {}
       });
     }else{
       res.json({
         err: false,
-        message:'Pelicula Guardada',
+        message:'Poryecto Guardado',
         objs:proyecto
       });
     }

@@ -72,25 +72,135 @@ $(document).ready(() =>{
       closeButton: true
     });
   });
+  var parent;
+  $(document).on("click", ".deleteAbility", function(){
+    parent = $(this).parent().parent();
+    body = `<div id="modalDeleteTeam">
+              <h4>Eliminar Habilidad</h4>
+              <div class="float-right">
+                <button type="button" class="closeModal">Cancelar</button>
+                <button data-id=${$(parent).attr('id')} type="submit" class='btn btn-danger' id='removeAbility'>Eliminar</button>
+              </div>
+            </div>`;
+
+    dialog = bootbox.dialog({
+      message: body,
+      closeButton: true
+    });
+  });
 
   $(document).on("click", ".closeModal", ()=>{
     dialog.modal("hide");
   });
 
-  // $(".send-active").click(function(){
-  //   var active = $(this).html();
-  //   console.log(active);
-  //   $.ajax({
-  //     url: '/dashboard'+active,
-  //     type: "GET"
-  //   }).done(function() {
-  //     })
-  //     .fail(function() {
-  //       alert( "error" );
-  //     })
-  //     .always(function() {
-  //     });
-  //
-  // });
+  $(document).on("click", "#removeAbility", function(){
 
+    var id = $(this).attr('data-id');
+    console.log(id);
+    $.ajax({
+      url: '/abilities/'+id,
+      type: "DELETE"
+    }).done(function() {
+        let length = $(parent).siblings().length;
+        dialog.modal("hide");
+        $(parent).remove();
+        if(length == 0){
+          $("table").hide();
+          $(".nonAbility").removeClass("d-none");
+        }
+      })
+      .fail(function() {
+        alert( "error" );
+      })
+      .always(function() {
+      });
+
+  });
+
+  $(".update").click(function(){
+
+    $.ajax({
+      url: "/users/"+$(this).parent().parent().attr("data-id"),
+      type: "PUT",
+      data:{
+        name: $("#name").val(),
+        email: $("#email").val(),
+        birthday: $("#birthday").val()
+      }
+    }).done(function() {
+        $.toast("Usuario Actualizado :)");
+      })
+      .fail(function(err) {
+        $.toast("Usuario no Actualizado :/");
+      })
+      .always(function() {
+      });
+  });
+
+  $(document).on("click", ".editAbility", function(){
+    parent = $(this).parent().parent();
+    var ability = $(this).parent().siblings(".abilityName").html();
+    var type = $(this).parent().siblings(".abilityType").html();
+    var id = $(this).parent().parent().attr("id");
+    body = `<div id="modalAddAbility">
+              <h4>Crear Nueva Habilidad</h4>
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input name="name" id="createTeam" type="text" placeholder="Escribe el nombre de tu Habilidad" value="${ability}" class="form-control"/>
+                </div>
+                <div class='form-group'>
+                  <select id="selectType" name="type" class="custom-select">
+                    <option value='Master'>Master</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Amateur">Amateur</option>
+                  </select>
+                </div>
+                <div class="float-right">
+                  <button type="button" class="closeModal">Cancelar</button>
+                  <button data-id=${id} type="submit" class='btn btnUpdate'>Guardar</button>
+                </div>
+            </div>`;
+
+    dialog = bootbox.dialog({
+      message: body,
+      closeButton: true
+    });
+    $('select[name="type"] option[value='+type+']').prop('selected', true);
+
+  });
+
+  $(document).on("click", ".btnUpdate", function(){
+    console.log($("#selectType").val());
+    $.ajax({
+      url: "/abilities/"+$(this).attr("data-id"),
+      type: "PUT",
+      data:{
+        name: $("input[name='name']").val(),
+        type: $("#selectType").val()
+      }
+    }).done(function(obj) {
+        $(parent).children(".abilityName").html(obj.objs.name);
+        $(parent).children(".abilityType").html(obj.objs.type);
+        $.toast("Habilidad Actualizada :)");
+        dialog.modal("hide");
+      })
+      .fail(function(err) {
+        $.toast("Habilidad no Actualizada :/");
+      })
+      .always(function() {
+      });
+  });
+
+  $('#proyectos').fullpage({
+        anchors:['firstPage', 'secondPage', 'thirdPage'],
+        afterLoad: function(anchorLink, index){
+          $("div.fp-controlArrow").hide();
+          $("i.fa-long-arrow-left").addClass("fp-controlArrow fp-prev");
+          $("i.fa-long-arrow-right").addClass("fp-controlArrow fp-next");
+        },
+        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+          
+        }
+	});
 });

@@ -26,67 +26,73 @@ block content
       img(src="images/empty_state_proyect.png").img-fluid
       p Parece que está algo vacio por aqui, por qué no empezamos creando un <a href="#proyectos">proyecto</a>.
     div#proyectos.tab-pane.fade.container(class=proyectos)
-      div.titles.row
-        div.col-md-4
-          i.fa.fa-long-arrow-left
-          span Ver Lista
-        div.col-md-4.mt-3
-          h4 Titulo del Proyecto
-        div.col-md-4
-          button.btn Terminar Proyecto
-      div.row.data
-        div.col-md-4.mb-2
-          div.wrapper.ml-5
-            img.img-thumbnail(src="images/osito.png")
-            div.overlay <i class="fa fa-camera"></i> Subir Foto
-        div.col-md-8.data-proyect
-          div.row
-            div.col-md-12.d-flex.justify-content-start
-              b DATOS DEL PROYECTO
-          div.row
+      div#section0.section
+        div.slide#slide1(data-anchor='slide1')
+          div.titles.row
             div.col-md-4
-              b Nombre
-              p WordPress Version 2.
+              i.fa.fa-long-arrow-left
+              span Ver Lista
+            div.col-md-4.mt-3
+              h4 Titulo del Proyecto
             div.col-md-4
-              b Fecha de Solicitud
-              p 12/03/2018
+              button.btn Terminar Proyecto
+          div.row.data
+            div.col-md-4.mb-2
+              div.wrapper.ml-5
+                img.img-thumbnail(src="images/osito.png")
+                div.overlay <i class="fa fa-camera"></i> Subir Foto
+            div.col-md-7.data-proyect
+              div.row
+                div.col-md-12.d-flex.justify-content-start
+                  b DATOS DEL PROYECTO
+              div.row
+                div.col-md-4
+                  b Nombre
+                  p WordPress Version 2.
+                div.col-md-4
+                  b Fecha de Solicitud
+                  p 12/03/2018
+                div.col-md-4
+                  b Fecha de Arranque
+                  p 12/05/2018
+              div.row
+                div.col-md-12
+                  b Product Owner
+                  p Alejandro West
+              div.row
+                div.col-md-12
+                  b Descripcion
+                  p Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age. To our children, cameras not so feature rich with LCD screens and built in Wi-Fi is as foreign as Atari.
+          div.row.backlogs.mt-3
             div.col-md-4
-              b Fecha de Arranque
-              p 12/05/2018
-          div.row
-            div.col-md-12
-              b Product Owner
-              p Alejandro West
-          div.row
-            div.col-md-12
-              b Descripcion
-              p Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age. To our children, cameras not so feature rich with LCD screens and built in Wi-Fi is as foreign as Atari.
-      div.row.backlogs.mt-3
-        div.col-md-4
-          h3 Product Backlog
-          div.header
-            i.fa.fa-plus-square
-          div.backlog
-            div.pt-5
-              img(src="images/reader.png").img-fluid
-              p Para comenzar a organizar tu proyecto, empecemos a crear las <a href="#" id="openSideModal">tareas</a>
-        div.col-md-4
-          h3 Release Backlog
-          div.header
-          div.backlog
-            div.pt-5
-              img(src="images/reader.png").img-fluid
-              p Una vez validadas tus tareas arrastralas a esta sección.
-        div.col-md-4.config
-          div.mt-4
-            h4 Configurar Release
-            i.fa.fa-long-arrow-right
-          div.mt-3.teams
-            h4#teams Equipos
-            a(href="#") Agregar
-            div.pt-5
-              img(src="images/baloom.png").img-fluid
-              p A nadie le gusta trabajar solo, comenzemos agregando <a href="#">equipos</a>
+              h3 Product Backlog
+              div.header
+                i.fa.fa-plus-square
+              div.backlog
+                div.pt-5
+                  img(src="images/reader.png").img-fluid
+                  p Para comenzar a organizar tu proyecto, empecemos a crear las <a href="#" id="openSideModal">tareas</a>
+            div.col-md-4
+              h3 Release Backlog
+              div.header
+              div.backlog
+                div.pt-5
+                  img(src="images/reader.png").img-fluid
+                  p Una vez validadas tus tareas arrastralas a esta sección.
+            div.col-md-4.config
+              div.mt-4
+                h4 Configurar Release
+                i.fa.fa-long-arrow-right
+              div.mt-3.teams
+                h4#teams Equipos
+                a(href="#") Agregar
+                div.pt-5
+                  img(src="images/baloom.png").img-fluid
+                  p A nadie le gusta trabajar solo, comenzemos agregando <a href="#">equipos</a>
+        div.slide#slide2(data-anchor='slide2')
+          h1 slide 2  
+        div.slide#slide3(data-anchor='slide3')
+          h1 slide 3
     div#archivero.tab-pane.fade.container(class=archivero)
       div.d-flex.flex-row.mt-3
         div

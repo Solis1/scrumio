@@ -199,7 +199,12 @@ main{
     .form-group{
       text-align: left;
     }
+    button{
+      @include btn-background-white();
+      font-weight: bold;
+    }
     @include form-style();
+
   }
   .profesional{
     text-align: center;
@@ -370,7 +375,9 @@ main{
 #proyectos{
   .titles{
     i{
-      color: $color-btn
+      color: $color-btn;
+      position: initial;
+      border-color: transparent;
     }
     span{
       font-size: 14px;
@@ -490,7 +497,9 @@ main{
         font-weight: bold;
       }
       i{
-        color: $color-btn
+        color: $color-btn;
+        position: initial;
+        border-color: transparent;
       }
       a{
         font-size: 16px;
@@ -502,6 +511,13 @@ main{
         font-weight: normal;
       }
     }
+  }
+}
+
+#modalDeleteTeam{
+  .closeModal{
+    @include cancel-modal-props();
+    font-size: 18px;
   }
 }
 

@@ -106,6 +106,16 @@ main {
 #profile .personal .form-group {
   text-align: left; }
 
+#profile .personal button {
+  border-radius: 7px;
+  background-color: #ffffff;
+  border: solid 3px #f57f17;
+  font-size: 13px;
+  color: #f57f17;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  font-weight: bold; }
+
 #profile .personal label {
   font-size: 13px;
   font-weight: bold; }
@@ -334,7 +344,9 @@ main {
   font-weight: bold; }
 
 #proyectos .titles i {
-  color: #f57f17; }
+  color: #f57f17;
+  position: initial;
+  border-color: transparent; }
 
 #proyectos .titles span {
   font-size: 14px;
@@ -458,7 +470,9 @@ main {
       font-size: 18px;
       font-weight: bold; }
     .backlogs .config div i {
-      color: #f57f17; }
+      color: #f57f17;
+      position: initial;
+      border-color: transparent; }
     .backlogs .config div a {
       font-size: 16px;
       font-weight: normal;
@@ -466,6 +480,18 @@ main {
     .backlogs .config div p {
       font-size: 18px;
       font-weight: normal; }
+
+#modalDeleteTeam .closeModal {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 13px;
+  font-weight: bold;
+  font-size: 18px; }
 
 .side-modal {
   height: 100%;

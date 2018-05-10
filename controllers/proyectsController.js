@@ -4,22 +4,31 @@ const mongoose = require('mongoose');
 
 function create(req, res, next){
   const nombre = req.body.nombre;
+  const date_request = req.body.date_request;
+  const date_deployed = req.body.date_deployed;
+  const product_owner = req.body.product_owner;
+  const product_owner_id = req.body.product_owner_id;
+  const description = req.body.description;
 
   let proyecto = new Proyecto();
 
   proyecto.nombre = nombre;
+  proyecto.date_request = date_request;
+  proyecto.date_deployed = date_deployed;
+  proyecto.product_owner = product_owner;
+  proyecto.description = description;
 
   proyecto.save((err, proyecto)=>{
     if (err) {
       res.json({
         err: true,
         message: 'No se pudo guardar el proyecto',
-        objs: {}
+        objs: err
       });
     }else{
       res.json({
         err: false,
-        message:'Poryecto Guardado',
+        message:'Proyecto Guardado',
         objs:proyecto
       });
     }

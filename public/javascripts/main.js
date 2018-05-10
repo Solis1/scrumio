@@ -200,7 +200,47 @@ $(document).ready(() =>{
           $("i.fa-long-arrow-right").addClass("fp-controlArrow fp-next");
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
-          
+
         }
 	});
+
+  $("#modalProyecto").click(function(){
+    body = `<div id="modalAddAbility">
+              <h4>Crear Nuevo Proyecto</h4>
+              <form method='POST' action='/proyects'>
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input name="name" id="nameProyect" type="text" placeholder="Escribe el nombre de tu proyecto" class="form-control"/>
+                </div>
+                <div class='form-row'>
+                  <div class="form-group col-6-md mr-auto">
+                    <label>Fecha de Solicitud</label>
+                    <input name="date_request" id="dateRequest" type="date" placeholder="Seleccione Fecha" class="form-control pr-5"/>
+                  </div>
+                  <div class="form-group col-6-md">
+                    <label>Fecha de Arranque</label>
+                    <input name="date_deployed" id="dateDeployed" type="date" placeholder="Seleccione Fecha" class="form-control pr-5"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Product Owner</label>
+                  <input name="product_owner" id="productOwner" type="text" placeholder="Escribe el nombre de quien solicito el proyecto" class="form-control"/>
+                </div>
+                <div class="form-group">
+                  <label>Descripción</label>
+                  <textarea name="description" id="description" type="text" placeholder="Escribe el nombre de quien solicito el proyecto" class="form-control"></textarea>
+                </div>
+                <div class="float-right">
+                  <button type="button" class="closeModal">Cancelar</button>
+                  <button id='saveProyect' type="submit" class='btn btnGuardar'>Guardar</button>
+                </div>
+              </form>
+            </div>`;
+
+    dialog = bootbox.dialog({
+      message: body,
+      closeButton: true
+    });
+  });
+
 });

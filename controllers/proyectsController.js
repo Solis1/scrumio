@@ -1,16 +1,17 @@
 const express = require('express');
-const Proyecto = require('../models/proyecto');
+const Proyect = require('../models/proyect');
 const mongoose = require('mongoose');
 
 function create(req, res, next){
-  const nombre = req.body.nombre;
+  console.log(req.body);
+  const nombre = req.body.name;
   const date_request = req.body.date_request;
   const date_deployed = req.body.date_deployed;
   const product_owner = req.body.product_owner;
-  const product_owner_id = req.body.product_owner_id;
+  const product_owner_id = req.user._id;
   const description = req.body.description;
 
-  let proyecto = new Proyecto();
+  let proyecto = new Proyect();
 
   proyecto.nombre = nombre;
   proyecto.date_request = date_request;
@@ -29,29 +30,7 @@ function create(req, res, next){
       res.json({
         err: false,
         message:'Proyecto Guardado',
-        objs:proyecto
-      });
-    }
-  });
-}
-
-function index(req, res, next){
-  const page = req.params.page ? req.params.page : 1;
-  Proyecto.paginate({}, {
-    page: page,
-    limit:3
-  }, (err, proyectos)=>{
-    if(err){
-      res.json({
-        err: true,
-        message: 'No se pudo listar proyectos',
-        objs: {}
-      });
-    }else{
-      res.json({
-        err: false,
-        message:'Lista de proyectos',
-        objs:proyectos
+        objs: proyecto
       });
     }
   });
@@ -73,7 +52,7 @@ function show(req, res, next){
 function remove(req, res, next){
   const id = req.params.id;
   if(id){
-    Proyecto.remove({_id:id}, function(err){
+    Proyect.remove({_id:id}, function(err){
       if (err) {
         res.json({
           err: true,
@@ -100,7 +79,6 @@ function remove(req, res, next){
 
 module.exports = {
   create,
-  index,
   show,
   remove
 }

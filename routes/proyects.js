@@ -1,13 +1,11 @@
-const proyectoControllers = require('../controllers/proyectoController');
+const proyectsControllers = require('../controllers/proyectsController');
 const express = require('express');
 const router = express.Router();
 
 
-router.post('/', proyecsControllers.create);
+router.post('/', proyectsControllers.create);
 
-router.get('/:page?', proyectsControllers.index);
-
-router.get('/ver/:id', proyectsControllers.show);
+// router.get('/ver/:id', proyectsControllers.show);
 
 /*
 

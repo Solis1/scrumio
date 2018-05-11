@@ -3,33 +3,33 @@ const mongoose = require('mongoose');
 const Historia = require('../models/historia');
 
 function create(req, res, next){
-  const narrativa = req.body.narrativa;
+  const narrative = req.body.narrative;
   // Aquí va el Product Owner
   const state = req.body.state;
-  const prioridad = req.body.prioridad;
+  const priority = req.body.priority;
   const size = req.body.size;
-  const como_realizar = req.body.como_realizar;
-  const quiero_tener = req.body.quiero_tener;
-  const de_manera = req.body.de_manera;
-  const criterios_aceptacion = req.body.criterios_aceptacion;
-  const dado_que = req.body.dado_que;
-  const cuando = req.body.cuando;
-  const entnces = req.body.entonces;
+  const how = req.body.how;
+  const what_i_want = req.body.what_i_want;
+  const so_that = req.body.so_that;
+  const criteria = req.body.criteria;
+  const since = req.body.since;
+  const when = req.body.when;
+  const so = req.body.so;
 
   let historia = new Historia();
 
-  historia.narrativa = narrativa;
+  historia.narrative = narrative;
   // Aquí va el Product Owner
   historia.state = state;
-  historia.prioridad = prioridad;
+  historia.priority = priority;
   historia.size = size;
-  historia.como_realizar = como_realizar;
-  historia.quiero_tener = quiero_tener;
-  historia.de_manera = de_manera;
-  historia.criterios_aceptacion = criterios_aceptacion;
-  historia.dado_que = dado_que;
-  historia.cuando = cuando;
-  historia.entnces = entonces;
+  historia.how = how;
+  historia.what_i_want = what_i_want;
+  historia.so_that = so_that;
+  historia.criteria = criteria;
+  historia.since = since;
+  historia.when = when;
+  historia.so = so;
 
   historia.save((err, historia)=>{
     if (err) {
@@ -50,10 +50,10 @@ function create(req, res, next){
 
 function index(req, res, next){
   const page = req.params.page ? req.params.page : 1;
-  Proyecto.paginate({}, {
+  Historia.paginate({}, {
     page: page,
     limit:3
-  }, (err, proyectos)=>{
+  }, (err, historia)=>{
     if(err){
       res.json({
         err: true,
@@ -64,7 +64,7 @@ function index(req, res, next){
       res.json({
         err: false,
         message:'Lista de proyectos',
-        objs:proyectos
+        objs:historia
       });
     }
   });
@@ -78,14 +78,57 @@ function show(req, res, next){
   }, (err, obj)=>{
     res.json({
       err: true,
-      message : 'Proyecto',
+      message : 'Historia',
       obj: obj
     });
   });
 }
 
-function body(req, res, next){
+function update(request, response, next) {
+  const narrative = req.body.narrative;
+  // Aquí va el Product Owner
+  const state = req.body.state;
+  const priority = req.body.priority;
+  const size = req.body.size;
+  const how = req.body.how;
+  const what_i_want = req.body.what_i_want;
+  const so_that = req.body.so_that;
+  const criteria = req.body.criteria;
+  const since = req.body.since;
+  const when = req.body.when;
+  const so = req.body.so;
 
+  Historia.findOne({
+    _id: mongoose.Types.ObjectId(request.params.id)
+  }, function (err, historia){
+    historia.narrative = narrative;
+    // Aquí va el Product Owner
+    historia.state = state;
+    historia.priority = priority;
+    historia.size = size;
+    historia.how = how;
+    historia.what_i_want = what_i_want;
+    historia.so_that = so_that;
+    historia.criteria = criteria;
+    historia.since = since;
+    historia.when = when;
+    historia.so = so;
+  doc.save((err, obj) => {
+    if (err) {
+      response.json({
+        error: true,
+        message: 'Habilidad no Guardada',
+        objs: err
+      });
+    } else {
+      response.json({
+        error: false,
+        message: 'Habilidad Guardada',
+        objs: obj
+      });
+    }
+  });;
+});
 }
 
 function remove(req, res, next){
@@ -95,13 +138,13 @@ function remove(req, res, next){
       if (err) {
         res.json({
           err: true,
-          message: 'No se pudo eliminar proyecto',
+          message: 'No se pudo eliminar historia',
           objs: {}
         });
       }else{
         res.json({
           err: false,
-          message:'Proyecto eliminado',
+          message:'Historia eliminada',
           objs: {}
         });
       }
@@ -109,7 +152,7 @@ function remove(req, res, next){
   }else{
     res.json({
       err: true,
-      message:'Proyecto no existe',
+      message:'Historia no existe',
       objs:{}
     });
   }

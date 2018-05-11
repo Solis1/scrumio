@@ -1,26 +1,16 @@
 const historiasController = require('../controllers/historiasController');
-const express = require('express');
-const router = express.Router();
 
-/*module.exports = function(app, passport) {
+module.exports = function(app, passport) {
+  app.post('/', historiasController.create);
 
-  app.post('/abilities', isLoggedIn, abilitiesController.create);
+  app.get('/:page?', historiasController.index);
 
-  app.delete('/abilities/:id', isLoggedIn, abilitiesController.remove);
+  app.get('/show/:id', historiasController.show);
 
-  app.put('/abilities/:id', isLoggedIn, abilitiesController.update);
+  app.put('/:id', historiasController.update);
 
-}*/
-
-router.post('/', historiasController.create);
-
-router.get('/:page?', historiasController.index);
-
-router.get('/show/:id', historiasController.show);
-
-router.put('/:id', historiasController.update);
-
-router.delete('/:id?', historiasController.remove);
+  app.delete('/:id?', historiasController.remove);
+}
 
 function isLoggedIn(req, res, next) {
 
@@ -34,5 +24,3 @@ function isLoggedIn(req, res, next) {
     message: "Necesita logearse primero."
   });
 }
-
-module.exports = router;

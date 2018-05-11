@@ -1,9 +1,11 @@
 const proyectsControllers = require('../controllers/proyectsController');
-const express = require('express');
-const router = express.Router();
+const securityMiddleware = require('../middlewares/securityMiddleware');
 
+module.exports = function(app, passport) {
 
-router.post('/', proyectsControllers.create);
+  app.post('/proyects', securityMiddleware.isLoggedIn, proyectsControllers.create);
+
+}
 
 // router.get('/ver/:id', proyectsControllers.show);
 
@@ -13,4 +15,3 @@ router.put('/:id', proyectoControllers.);
 
 router.delete('/:id?', proyectoControllers.remove);
 */
-module.exports = router;

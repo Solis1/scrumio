@@ -3,7 +3,6 @@ const Proyect = require('../models/proyect');
 const mongoose = require('mongoose');
 
 function create(req, res, next){
-  console.log(req.body);
   const nombre = req.body.name;
   const date_request = req.body.date_request;
   const date_deployed = req.body.date_deployed;
@@ -17,6 +16,7 @@ function create(req, res, next){
   proyecto.date_request = date_request;
   proyecto.date_deployed = date_deployed;
   proyecto.product_owner = product_owner;
+  proyecto.product_owner_id = product_owner_id;
   proyecto.description = description;
 
   proyecto.save((err, proyecto)=>{

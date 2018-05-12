@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 
-var abilitySchema = mongoose.Schema({
+var historySchema = mongoose.Schema({
         narrative : String,
         product_owner_id : Schema.Types.ObjectId,
         state : String,
@@ -16,5 +16,5 @@ var abilitySchema = mongoose.Schema({
         when : String,
         so : String
 });
-// create the model for users and expose it to our app
-module.exports = mongoose.model('Ability', abilitySchema);
+// create the model for historys and expose it to our app
+module.exports = mongoose.model('History', abilitySchema);

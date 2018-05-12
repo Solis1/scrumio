@@ -1,13 +1,10 @@
 const express = require('express');
-const Proyect = require('../models/proyect');
+const Project = require('../models/project');
 const mongoose = require('mongoose');
 
 function index(req, res, next){
-  const page = req.params.page ? req.params.page : 1;
-  Proyect.paginate({}, {
-    page: page,
-    limit:3
-  }, (err, users)=>{
+
+  Project.find({"product_owner_id" : req.user._id}, (err, objs)=>{
     if(err){
       res.json({
         err: true,
@@ -18,10 +15,17 @@ function index(req, res, next){
       res.json({
         err: false,
         message:'Lista de proyectos',
-        objs:users
+        objs:objs
       });
     }
   });
+
+  // Project.paginate({}, {
+  //   page: page,
+  //   limit:3
+  // }, (err, users)=>{
+  //
+  // });
 }
 
 function create(req, res, next){
@@ -32,7 +36,7 @@ function create(req, res, next){
   const product_owner_id = req.user._id;
   const description = req.body.description;
 
-  let proyect = new Proyect();
+  let proyect = new Project();
 
   proyect.nombre = nombre;
   proyect.date_request = date_request;
@@ -75,7 +79,7 @@ function update(req, res, next){
   proyect.product_owner_id = product_owner_id;
   proyect.description = description;
 
-  Proyect.findOneAndUpdate({ _id : req.params.id}, {$set: proyect}, {new: true},
+  Project.findOneAndUpdate({ _id : req.params.id}, {$set: proyect}, {new: true},
     (err, proyect)=>{
     if (err) {
       res.json({
@@ -95,7 +99,7 @@ function update(req, res, next){
 
 function show(req, res, next){
   const id = req.params.id;
-  Proyect.findOne({
+  Project.findOne({
     _id:id
   }, (err, obj)=>{
     res.json({
@@ -109,7 +113,7 @@ function show(req, res, next){
 function remove(req, res, next){
   const id = req.params.id;
   if(id){
-    Proyect.remove({_id:id}, function(err){
+    Project.remove({_id:id}, function(err){
       if (err) {
         res.json({
           err: true,

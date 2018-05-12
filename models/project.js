@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
-const mongoosePaginate = require('mongoose-paginate');
 const Schema = mongoose.Schema;
 
-const proyectSchema = Schema({
+const projectSchema = Schema({
   nombre            : String,
   date_request      : String,
   date_deployed     : String,
@@ -11,5 +10,4 @@ const proyectSchema = Schema({
   description       : String
 });
 
-schema.plugin(mongoosePaginate);
-module.exports = mongoose.model('Proyect', proyectSchema);
+module.exports = mongoose.model('Project', projectSchema);

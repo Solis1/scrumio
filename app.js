@@ -11,7 +11,6 @@ const flash              = require('connect-flash');
 const session            = require('express-session');
 const MongoStore         = require('connect-mongo')(session);
 const configDB           = require('./config/database.js');
-const proyectos          = require('./routes/proyects');
 const app = express();
 
 
@@ -69,7 +68,8 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 require('./routes/index.js')(app, passport);
 require('./routes/users.js')(app, passport);
 require('./routes/abilities.js')(app, passport);
-require('./routes/proyects.js')(app, passport);
+require('./routes/projects.js')(app, passport);
+require('./routes/histories.js')(app, passport);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

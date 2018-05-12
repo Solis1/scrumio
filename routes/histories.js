@@ -1,4 +1,4 @@
-const historiasController = require('../controllers/historiasController');
+const historiasController = require('../controllers/historiesController');
 
 module.exports = function(app, passport) {
   app.post('/histories', isLoggedIn, historiasController.create);

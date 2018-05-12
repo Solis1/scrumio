@@ -17,4 +17,4 @@ var historySchema = mongoose.Schema({
         so : String
 });
 // create the model for historys and expose it to our app
-module.exports = mongoose.model('History', abilitySchema);
+module.exports = mongoose.model('History', historySchema);

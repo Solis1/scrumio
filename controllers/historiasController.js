@@ -4,7 +4,7 @@ const Historia = require('../models/historia');
 
 function create(req, res, next){
   const narrative = req.body.narrative;
-  // Aquí va el Product Owner
+  const product_owner_id = req.user._id
   const state = req.body.state;
   const priority = req.body.priority;
   const size = req.body.size;
@@ -19,7 +19,7 @@ function create(req, res, next){
   let historia = new Historia();
 
   historia.narrative = narrative;
-  // Aquí va el Product Owner
+  historia.product_owner_id = product_owner_id;
   historia.state = state;
   historia.priority = priority;
   historia.size = size;
@@ -86,7 +86,7 @@ function show(req, res, next){
 
 function update(request, response, next) {
   const narrative = req.body.narrative;
-  // Aquí va el Product Owner
+  const product_owner_id = req.user._id
   const state = req.body.state;
   const priority = req.body.priority;
   const size = req.body.size;
@@ -102,7 +102,7 @@ function update(request, response, next) {
     _id: mongoose.Types.ObjectId(request.params.id)
   }, function (err, historia){
     historia.narrative = narrative;
-    // Aquí va el Product Owner
+    historia.product_owner_id = product_owner_id;
     historia.state = state;
     historia.priority = priority;
     historia.size = size;

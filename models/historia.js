@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var abilitySchema = mongoose.Schema({
         narrative : String,
-        proyect_id : Schema.Types.ObjectId,
+        product_owner_id : Schema.Types.ObjectId,
         state : String,
         priority : String,
         size : Number,

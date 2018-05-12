@@ -3,8 +3,15 @@ const Project = require('../models/project');
 const mongoose = require('mongoose');
 
 function index(req, res, next){
+  const page = req.params.page ? req.params.page : 1;
+  // Project.find({"product_owner_id" : req.user._id}, (err, objs)=>{
+  //
+  // });
 
-  Project.find({"product_owner_id" : req.user._id}, (err, objs)=>{
+  Project.paginate({"product_owner_id" : req.user._id}, {
+    page: page,
+    limit:3
+  }, (err, objs)=>{
     if(err){
       res.json({
         err: true,
@@ -15,17 +22,10 @@ function index(req, res, next){
       res.json({
         err: false,
         message:'Lista de proyectos',
-        objs:objs
+        objs: objs
       });
     }
   });
-
-  // Project.paginate({}, {
-  //   page: page,
-  //   limit:3
-  // }, (err, users)=>{
-  //
-  // });
 }
 
 function create(req, res, next){

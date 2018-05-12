@@ -1,5 +1,5 @@
 # Proyecto Scrumio
-Este es el proyecto de la metodolía scrum para la clase de **DRAW**.
+Este es el proyecto de la metodología scrum para la clase de **DRAW**.
 
 ## Como instalar
 

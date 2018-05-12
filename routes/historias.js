@@ -1,15 +1,15 @@
 const historiasController = require('../controllers/historiasController');
 
 module.exports = function(app, passport) {
-  app.post('/histories', historiasController.create);
+  app.post('/histories', isLoggedIn, historiasController.create);
 
-  app.get('/histories/:page?', historiasController.index);
+  app.get('/histories/:page?', isLoggedIn, historiasController.index);
 
-  app.get('/histories/show/:id', historiasController.show);
+  app.get('/histories/show/:id', isLoggedIn, historiasController.show);
 
-  app.put('/histories/:id', historiasController.update);
+  app.put('/histories/:id', isLoggedIn, historiasController.update);
 
-  app.delete('/histories/:id?', historiasController.remove);
+  app.delete('/histories/:id?', isLoggedIn, historiasController.remove);
 }
 
 function isLoggedIn(req, res, next) {

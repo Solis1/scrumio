@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Historia = require('../models/historia');
+const History = require('../models/history');
 
 function create(req, res, next){
   const narrative = req.body.narrative;
@@ -16,22 +16,22 @@ function create(req, res, next){
   const when = req.body.when;
   const so = req.body.so;
 
-  let historia = new Historia();
+  let history = new History();
 
-  historia.narrative = narrative;
-  historia.product_owner_id = product_owner_id;
-  historia.state = state;
-  historia.priority = priority;
-  historia.size = size;
-  historia.how = how;
-  historia.what_i_want = what_i_want;
-  historia.so_that = so_that;
-  historia.criteria = criteria;
-  historia.since = since;
-  historia.when = when;
-  historia.so = so;
+  history.narrative = narrative;
+  history.product_owner_id = product_owner_id;
+  history.state = state;
+  history.priority = priority;
+  history.size = size;
+  history.how = how;
+  history.what_i_want = what_i_want;
+  history.so_that = so_that;
+  history.criteria = criteria;
+  history.since = since;
+  history.when = when;
+  history.so = so;
 
-  historia.save((err, historia)=>{
+  history.save((err, history)=>{
     if (err) {
       res.json({
         err: true,
@@ -42,7 +42,7 @@ function create(req, res, next){
       res.json({
         err: false,
         message:'Historia guardada',
-        objs:historia
+        objs:history
       });
     }
   });
@@ -50,10 +50,10 @@ function create(req, res, next){
 
 function index(req, res, next){
   const page = req.params.page ? req.params.page : 1;
-  Historia.paginate({}, {
+  History.paginate({}, {
     page: page,
     limit:3
-  }, (err, historia)=>{
+  }, (err, history)=>{
     if(err){
       res.json({
         err: true,
@@ -64,7 +64,7 @@ function index(req, res, next){
       res.json({
         err: false,
         message:'Lista de proyectos',
-        objs:historia
+        objs:history
       });
     }
   });
@@ -73,7 +73,7 @@ function index(req, res, next){
 //FindById
 function show(req, res, next){
   const id = req.params.id;
-  Proyecto.findOne({
+  History.findOne({
     _id:id
   }, (err, obj)=>{
     res.json({
@@ -98,21 +98,21 @@ function update(request, response, next) {
   const when = req.body.when;
   const so = req.body.so;
 
-  Historia.findOne({
+  History.findOne({
     _id: mongoose.Types.ObjectId(request.params.id)
-  }, function (err, historia){
-    historia.narrative = narrative;
-    historia.product_owner_id = product_owner_id;
-    historia.state = state;
-    historia.priority = priority;
-    historia.size = size;
-    historia.how = how;
-    historia.what_i_want = what_i_want;
-    historia.so_that = so_that;
-    historia.criteria = criteria;
-    historia.since = since;
-    historia.when = when;
-    historia.so = so;
+  }, function (err, history){
+    history.narrative = narrative;
+    history.product_owner_id = product_owner_id;
+    history.state = state;
+    history.priority = priority;
+    history.size = size;
+    history.how = how;
+    history.what_i_want = what_i_want;
+    history.so_that = so_that;
+    history.criteria = criteria;
+    history.since = since;
+    history.when = when;
+    history.so = so;
   doc.save((err, obj) => {
     if (err) {
       response.json({
@@ -134,7 +134,7 @@ function update(request, response, next) {
 function remove(req, res, next){
   const id = req.params.id;
   if(id){
-    Proyecto.remove({_id:id}, function(err){
+    History.remove({_id:id}, function(err){
       if (err) {
         res.json({
           err: true,
